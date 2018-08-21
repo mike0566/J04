@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahequet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/21 11:31:13 by ahequet           #+#    #+#             */
-/*   Updated: 2018/08/21 15:34:36 by ahequet          ###   ########.fr       */
+/*   Created: 2018/08/21 15:35:29 by ahequet           #+#    #+#             */
+/*   Updated: 2018/08/21 17:22:36 by ahequet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int ft_fibonacci(int index)
+int		ft_sqrt(int nb)
 {
-	if(index < 0)
+	int a;
+
+	a = 0;
+	while (nb != a * a)
 	{
-		return (-1);
+		a++;
+		if (nb == a * a)
+		{
+			return (a);
+		}
+		if (a >= nb)
+		{
+			return (0);
+		}
 	}
-	if(index == 0)
-	{
-		return (0);
-	}
-	if(index == 1 || index == 2)
-	{
-	return (1);
-	}
-	else
-	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	return (0);
 }
 
 int		main(void)
 {
-	int index;
+	int nb;
 
-	index = 7;
-	ft_fibonacci(index);
-	printf("%d", ft_fibonacci(index));
+	nb = 9;
+	ft_sqrt(nb);
+	printf("%d", ft_sqrt(nb));
 	return (0);
 }
